@@ -28,4 +28,7 @@ echo "Checking for orphaned packages."
 /usr/bin/pacman -Qtdq || /usr/bin/echo '==> no orphans found'
 
 echo "Checking for pac[new,save,orig] files."
-MERGEPROG=kompare DIFFPROG=kompare pacdiff --sudo || /usr/bin/echo '==> no pac[new,save,orig] found'
+MERGEPROG=kompare DIFFPROG=kompare pacdiff --sudo
+if [ $? -eq 0 ]; then /usr/bin/echo '==> no pac[new,save,orig] found'
+fi
+
