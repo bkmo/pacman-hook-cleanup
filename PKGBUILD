@@ -1,13 +1,13 @@
 # bkmo original
 
 pkgname=pacman-hook-cleanup
-pkgver=1.0
+pkgver=1.1
 pkgrel=1
 pkgdesc="Post transaction cleanup of caches"
 arch=('any')
 url="https://github.com/bkmo/pacman-hook-cleanup"
 license=('GPL3')
-depends=('pacman' 'pacman-contrib')
+depends=('pacman' 'pacman-contrib' 'vim')
 makedepends=('git')
 provides=('pacman-hook-cleanup')
 source=($url/archive/refs/tags/$pkgver.tar.gz)
