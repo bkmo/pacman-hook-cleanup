@@ -1,7 +1,7 @@
 # bkmo original
 
 pkgname=pacman-hook-cleanup
-pkgver=1.1
+pkgver=1.2
 pkgrel=1
 pkgdesc="Post transaction cleanup of caches"
 arch=('any')
