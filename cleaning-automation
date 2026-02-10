@@ -27,10 +27,11 @@ tar --zstd -C / -cf /home/$running_on_behalf/Pacman-bkups/pacman_database.tar.zs
 echo "Checking for orphaned packages."
 /usr/bin/pacman -Qtdq || /usr/bin/echo '==> no orphans found'
 
-echo "Checking for pac[new,save,orig] files."
-pacnews=($(/usr/bin/pacdiff --output|grep -v pacsave))
+echo "Checking for .pac[new,save] files."
+pacnews=($(/usr/bin/pacdiff --output | grep -v "pacnew|pacsave" ))
 nb="${#pacnews[@]}"
 if [[ $nb > 0 ]]; then
-  echo -e "\e[1;31m$nb .pacnew found in system \e[0m"
+  echo -e "\e[1;31m$nb .pac[new,save] found in system \e[0m"
   printf "%s\n" "${pacnews[@]}"
+else echo "==> No .pacnew or .pacsave files found."
 fi
